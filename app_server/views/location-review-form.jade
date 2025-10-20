@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container(style="margin-top:100px")
+    h1= title
+    p Add your review here.
+    form(action="/review", method="post")
+      .form-group
+        label(for="name") Name
+        input.form-control(type="text", name="name", required)
+      .form-group
+        label(for="rating") Rating
+        select.form-control(name="rating")
+          option 5
+          option 4
+          option 3
+          option 2
+          option 1
+      .form-group
+        label(for="review") Review
+        textarea.form-control(name="review", rows="5")
+      button.btn.btn-primary(type="submit") Submit

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container
+    h1(style="margin-top:200px") Register now
+    p.lead
+      | Create your account. Do you have one? 
+      a(href='/signin') Signin Now.
+
+    form(action="/register", method="post", role="form")
+      .form-group
+        label(for='username') Username
+        input.form-control(type='text', id='username', name='username', placeholder='Enter a username')
+
+      .form-group
+        label(for='password') Password
+        input.form-control(type='password', id='password', name='password', placeholder='Enter a password')
+
+      .form-group
+        label(for='confirmPassword') Confirm Password
+        input.form-control(type='password', id='confirmPassword', name='confirmPassword', placeholder='Enter password again')
+
+      button.btn.btn-primary(type='submit') Submit
+      &nbsp;
+      a.btn.btn-default(role='button', href='/') Cancel
